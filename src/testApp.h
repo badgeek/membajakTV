@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Carbon/Carbon.h>  
 #include "ofMain.h"
 #include "eyeMesh.h"
 
@@ -20,7 +21,7 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 	
-		void setTexCoord(int texW, int texH);
+		OSStatus SendAppleEventToSystemProcess(AEEventID EventToSend);  
 	
 		ofEasyCam		windowCamera;
 		ofTexture		eyeCamTexture;

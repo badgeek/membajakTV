@@ -16,15 +16,26 @@ void testApp::setup(){
 	ofSetWindowShape(1024, 768);
 	ofBackground(0, 0, 0, 0);
 	
-	gridCam.setMeshGrid(120, 120);
-	gridCam.setMeshSize(1, 1);
+	gridCam.setMeshGrid(150, 150);
+	gridCam.setMeshSize(0.25, 0.25);
 	gridCam.updateMeshTexCoord();
 	
-	windowCamera.setDistance(400);
+	windowCamera.setDistance(100);
 	
 	enableAlpha = true;	
 	
 	ofToggleFullscreen();
+	
+	ofEnableBlendMode(OF_BLENDMODE_ADD);
+	//glEnable( GL_POINT_SMOOTH );
+
+	
+	CGPoint point;
+	point.x = 100;
+	point.y = 100;
+	CGWarpMouseCursorPosition(point);
+	CGPostMouseEvent(point, FALSE, 1, TRUE);   //mouse down
+	CGPostMouseEvent(point, FALSE, 1, FALSE);//mouse up
 	
 }
 
@@ -38,12 +49,12 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 	
-	if(enableAlpha == true)
+	/*if(enableAlpha == true)
 	{
 	 ofEnableBlendMode(OF_BLENDMODE_ADD);
 	}else{
 	 ofDisableBlendMode();
-	}
+	}*/
 
 		windowCamera.begin();
 		
@@ -53,50 +64,40 @@ void testApp::draw(){
 			glScalef(4.0, -3.0, 1);
 	
 				fuxShader.begin();
-				fuxShader.setUniform1f("eyeMultiply", 800.0f);
+				fuxShader.setUniform1f("eyeMultiply", 100.0f);
 				fuxShader.setUniformTexture("eyeTexDepth", eyeCam.getTextureReference(), 0);
 	
+				gridCam.draw(GL_LINES);
+
+	
 				glPushAttrib(GL_POLYGON_BIT);
-					glEnable( GL_POINT_SMOOTH );
+					//glEnable( GL_POINT_SMOOTH );
 					glFrontFace(GL_CW);
-					glPolygonMode(GL_FRONT, GL_POINT);
-					glPolygonMode(GL_BACK, GL_LINE);
-					glPointSize(5.f);
+					//glPolygonMode(GL_FRONT, GL_POINT);
+					//glPolygonMode(GL_BACK, GL_POINT);
+					glPointSize(2.5f);
 					gridCam.draw(GL_POINTS);
 				glPopAttrib();
 			
-				glPushAttrib(GL_POLYGON_BIT);
+				/*glPushAttrib(GL_POLYGON_BIT);
 					//glEnable( GL_POINT_SMOOTH );
 					glFrontFace(GL_CW);
 					glPolygonMode(GL_FRONT, GL_LINE);
 					glPolygonMode(GL_BACK, GL_LINE);
 					//glPointSize(5.f);
 					gridCam.draw(GL_TRIANGLE_STRIP);
-				glPopAttrib();
-	
+				glPopAttrib();*/
+			 
+/*
 				glPushAttrib(GL_POLYGON_BIT);
-					glEnable( GL_POINT_SMOOTH );
-					glFrontFace(GL_CW);
-					glPolygonMode(GL_FRONT, GL_POINT);
-					glPolygonMode(GL_BACK, GL_POINT);
-					glPointSize(5.f);
+					//glEnable( GL_POINT_SMOOTH );
+					//glFrontFace(GL_CW);
+					glPolygonMode(GL_FRONT, GL_LINE);
+					glPolygonMode(GL_BACK, GL_LINE);
+					//glPointSize(5.f);
 					gridCam.draw(GL_TRIANGLE_STRIP);
 				glPopAttrib();
-	
-				gridCam.draw(GL_LINES);
-
-	
-				glPushAttrib(GL_POLYGON_BIT);
-					//glPolygonMode(GL_BACK, GL_LINE);
-					//glPolygonMode(GL_FRONT, GL_LINE);
-					glPushMatrix();
-						//glTranslatef(0, 0, -30);
-						eyeCam.getTextureReference().bind();	
-						gridCam.draw(GL_LINES);
-						eyeCam.getTextureReference().unbind();	
-					glPopMatrix();
-				glPopAttrib();
-			
+	*/
 			glPopMatrix();
 		
 			fuxShader.end();
@@ -120,7 +121,8 @@ void testApp::keyPressed(int key){
 	}
 	
 	if (key == 97) {
-		enableAlpha = !enableAlpha;
+		//enableAlpha = !enableAlpha;
+		OSErr error = SendAppleEventToSystemProcess(kAEShutDown);  
 	}
 }
 
@@ -164,3 +166,50 @@ void testApp::gotMessage(ofMessage msg){
 void testApp::dragEvent(ofDragInfo dragInfo){ 
 
 }
+
+
+OSStatus testApp::SendAppleEventToSystemProcess(AEEventID EventToSend)  
+{  
+    AEAddressDesc targetDesc;  
+    static const ProcessSerialNumber  
+	kPSNOfSystemProcess = { 0, kSystemProcess };  
+    AppleEvent eventReply = {typeNull, NULL};  
+    AppleEvent appleEventToSend = {typeNull, NULL};  
+	
+    OSStatus error = noErr;  
+	
+    error = AECreateDesc(typeProcessSerialNumber,  
+						 &kPSNOfSystemProcess, sizeof(kPSNOfSystemProcess),  
+						 &targetDesc);  
+	
+    if (error != noErr)  
+    {  
+        return(error);  
+    }  
+	
+    error = AECreateAppleEvent(kCoreEventClass, EventToSend,  
+							   &targetDesc, kAutoGenerateReturnID,  
+							   kAnyTransactionID, &appleEventToSend);  
+	
+    AEDisposeDesc(&targetDesc);  
+	
+    if (error != noErr)  
+    {  
+        return(error);  
+    }  
+	
+    error = AESend(&appleEventToSend, &eventReply, kAENoReply,  
+				   kAENormalPriority, kAEDefaultTimeout,  
+				   NULL, NULL);  
+	
+    AEDisposeDesc(&appleEventToSend);  
+	
+    if (error != noErr)  
+    {  
+        return(error);  
+    }  
+	
+    AEDisposeDesc(&eventReply);  
+	
+    return(error); //if this is noErr then we are successful  
+}  
