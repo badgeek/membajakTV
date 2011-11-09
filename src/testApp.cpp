@@ -17,8 +17,8 @@ void testApp::setup(){
 	ofBackground(0, 0, 0, 0);
 	
 	
-	gridCam.setMeshGrid(40, 30);
-	gridCam.setMeshSize(20, 20);
+	gridCam.setMeshGrid(100, 100);
+	gridCam.setMeshSize(10, 10);
 	gridCam.updateMeshTexCoord();
 	
 	windowCamera.setDistance(400);
@@ -52,30 +52,39 @@ void testApp::draw(){
 			//unflip the camera
 			glScalef(1.0, -1.0, 1.0);
 
+				fuxShader.begin();
+				fuxShader.setUniform1f("eyeMultiply", -600.0f);
+				fuxShader.setUniformTexture("eyeTexDepth", eyeCam.getTextureReference(), 0);
+	
 				glPushAttrib(GL_POLYGON_BIT);
-					glEnable( GL_POINT_SMOOTH );
+					//glEnable( GL_POINT_SMOOTH );
 					glFrontFace(GL_CW);
-					glPolygonMode(GL_FRONT, GL_POINT);
-					glPolygonMode(GL_BACK, GL_LINE);
+					//glPolygonMode(GL_FRONT, GL_POINT);
+					//glPolygonMode(GL_BACK, GL_LINE);
 					glPointSize(5.f);
-					eyeCam.getTextureReference().bind();	
-					gridCam.draw(GL_TRIANGLE_STRIP);
-					eyeCam.getTextureReference().unbind();
+					//eyeCam.getTextureReference().bind();	
+					gridCam.draw(GL_POINTS);
+					//eyeCam.getTextureReference().unbind();
 				glPopAttrib();
 			
+				//gridCam.draw(GL_LINES);
+
+	
 				glPushAttrib(GL_POLYGON_BIT);
-					glPolygonMode(GL_BACK, GL_LINE);
-					glPolygonMode(GL_FRONT, GL_LINE);
+					//glPolygonMode(GL_BACK, GL_LINE);
+					//glPolygonMode(GL_FRONT, GL_LINE);
 					glPushMatrix();
-						glTranslatef(0, 0, -30);
+						//glTranslatef(0, 0, -30);
 						eyeCam.getTextureReference().bind();	
-						gridCam.draw(GL_TRIANGLE_STRIP);
+						gridCam.draw(GL_LINES);
 						eyeCam.getTextureReference().unbind();	
 					glPopMatrix();
 				glPopAttrib();
 			
 			glPopMatrix();
 		
+			fuxShader.end();
+
 		windowCamera.end();
 	
 	ofDrawBitmapString("press f to fullscreen, n to normal, mouse x: " + ofToString(mouseX) + " mouseY:" + ofToString(mouseY), ofPoint(20,20));
