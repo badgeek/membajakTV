@@ -24,7 +24,6 @@ void testApp::setup(){
 	windowCamera.setDistance(400);
 	
 	enableAlpha = false;
-	enableRawAlpha = false;
 	//windowCamera.setScale(1, -1, 1);
 	
 	
@@ -43,7 +42,7 @@ void testApp::draw(){
 	if(enableAlpha == true)
 	{
 	 ofEnableBlendMode(OF_BLENDMODE_ADD);
-	{
+	}else{
 	 ofDisableBlendMode();
 	}
 
@@ -95,8 +94,7 @@ void testApp::keyPressed(int key){
 		ofSetFullscreen(false);
 	}
 	
-	if (key == 97)
-	{
+	if (key == 97) {
 		enableAlpha = !enableAlpha;
 	}
 }
