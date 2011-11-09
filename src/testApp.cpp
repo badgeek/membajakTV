@@ -17,12 +17,14 @@ void testApp::setup(){
 	ofBackground(0, 0, 0, 0);
 	
 	gridCam.setMeshGrid(120, 120);
-	gridCam.setMeshSize(10, 10);
+	gridCam.setMeshSize(1, 1);
 	gridCam.updateMeshTexCoord();
 	
 	windowCamera.setDistance(400);
 	
 	enableAlpha = true;	
+	
+	ofToggleFullscreen();
 	
 }
 
@@ -72,7 +74,16 @@ void testApp::draw(){
 					gridCam.draw(GL_TRIANGLE_STRIP);
 				glPopAttrib();
 	
-				//gridCam.draw(GL_LINES);
+				glPushAttrib(GL_POLYGON_BIT);
+					glEnable( GL_POINT_SMOOTH );
+					glFrontFace(GL_CW);
+					glPolygonMode(GL_FRONT, GL_POINT);
+					glPolygonMode(GL_BACK, GL_POINT);
+					glPointSize(5.f);
+					gridCam.draw(GL_TRIANGLE_STRIP);
+				glPopAttrib();
+	
+				gridCam.draw(GL_LINES);
 
 	
 				glPushAttrib(GL_POLYGON_BIT);
