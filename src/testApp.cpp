@@ -40,30 +40,12 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 	
-	if(enableRawAlpha == true)
-	{
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-		glDepthMask(GL_FALSE);
-		glEnable(GL_ALPHA_TEST);
-		glAlphaFunc(GL_GREATER, 0.f);
-		
-	}else if(enableAlpha == false){
-		glDisable(GL_BLEND);
-		glDepthMask(GL_TRUE);
-		glDisable(GL_ALPHA_TEST);
-	}
-	
-	
 	if(enableAlpha == true)
 	{
 	 ofEnableBlendMode(OF_BLENDMODE_ADD);
 	}else if(enableRawAlpha == false){
 	 ofDisableBlendMode();
 	}
-	 
-	
-
 
 		windowCamera.begin();
 		
@@ -97,11 +79,6 @@ void testApp::draw(){
 		
 		windowCamera.end();
 	
-	//if(enableAlpha == true)
-	//{
-
-	//}
-	
 	ofDrawBitmapString("press f to fullscreen, n to normal, mouse x: " + ofToString(mouseX) + " mouseY:" + ofToString(mouseY), ofPoint(20,20));
 	
 	
@@ -118,20 +95,10 @@ void testApp::keyPressed(int key){
 		ofSetFullscreen(false);
 	}
 	
-	
 	if (key == 97)
 	{
 		enableAlpha = !enableAlpha;
-		//printf("alpha:%i\n", enableAlpha);
 	}
-	
-	if	(key == 115)
-	{
-		enableRawAlpha = !enableRawAlpha;
-	}
-
-	
-	
 }
 
 //--------------------------------------------------------------

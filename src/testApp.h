@@ -29,7 +29,6 @@ class testApp : public ofBaseApp{
 		ofFbo			eyeCamFBO;
 	
 		bool enableAlpha;
-		bool enableRawAlpha;
 	
 		float eyeMeshTexCoord[640][480][2];
 	
