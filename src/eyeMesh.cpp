@@ -71,7 +71,7 @@ void eyeMesh::setMeshGrid(int gridW, int gridH)
 	meshGridY =	gridH;
 }
 
-void eyeMesh::setMeshSize(int sizeX, int sizeY)
+void eyeMesh::setMeshSize(float sizeX, float sizeY)
 {
 	meshSizeX = sizeX;
 	meshSizeY = sizeY;

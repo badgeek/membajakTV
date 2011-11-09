@@ -13,8 +13,9 @@ class eyeMesh {
 private:
 	
 	int meshScale;
-	int meshSizeX;
-	int meshSizeY;
+	
+	float meshSizeX;
+	float meshSizeY;
 	
 	int meshGridX;
 	int meshGridY;
@@ -29,7 +30,7 @@ public:
 	eyeMesh();
 	void updateMeshTexCoord();
 	void setMeshGrid(int gridW, int gridH);
-	void setMeshSize(int sizeX, int sizeY);
+	void setMeshSize(float sizeX, float sizeY);
 	void setMeshTextureSize(int width, int height);
 	void setMeshScale(int scale);
 	void draw(GLenum  drawMode);
