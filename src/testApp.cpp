@@ -43,7 +43,7 @@ void testApp::draw(){
 	if(enableAlpha == true)
 	{
 	 ofEnableBlendMode(OF_BLENDMODE_ADD);
-	}else if(enableRawAlpha == false){
+	{
 	 ofDisableBlendMode();
 	}
 
