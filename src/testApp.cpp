@@ -16,16 +16,13 @@ void testApp::setup(){
 	ofSetWindowShape(1024, 768);
 	ofBackground(0, 0, 0, 0);
 	
-	
-	gridCam.setMeshGrid(100, 100);
+	gridCam.setMeshGrid(120, 120);
 	gridCam.setMeshSize(10, 10);
 	gridCam.updateMeshTexCoord();
 	
 	windowCamera.setDistance(400);
 	
-	enableAlpha = false;
-	//windowCamera.setScale(1, -1, 1);
-	
+	enableAlpha = true;	
 	
 }
 
@@ -50,23 +47,31 @@ void testApp::draw(){
 		
 			glPushMatrix();
 			//unflip the camera
-			glScalef(1.0, -1.0, 1.0);
-
+			//glScalef(1.0, -1.0, 1.0);
+			glScalef(4.0, -3.0, 1);
+	
 				fuxShader.begin();
-				fuxShader.setUniform1f("eyeMultiply", -600.0f);
+				fuxShader.setUniform1f("eyeMultiply", 800.0f);
 				fuxShader.setUniformTexture("eyeTexDepth", eyeCam.getTextureReference(), 0);
 	
 				glPushAttrib(GL_POLYGON_BIT);
-					//glEnable( GL_POINT_SMOOTH );
+					glEnable( GL_POINT_SMOOTH );
 					glFrontFace(GL_CW);
-					//glPolygonMode(GL_FRONT, GL_POINT);
-					//glPolygonMode(GL_BACK, GL_LINE);
+					glPolygonMode(GL_FRONT, GL_POINT);
+					glPolygonMode(GL_BACK, GL_LINE);
 					glPointSize(5.f);
-					//eyeCam.getTextureReference().bind();	
 					gridCam.draw(GL_POINTS);
-					//eyeCam.getTextureReference().unbind();
 				glPopAttrib();
 			
+				glPushAttrib(GL_POLYGON_BIT);
+					//glEnable( GL_POINT_SMOOTH );
+					glFrontFace(GL_CW);
+					glPolygonMode(GL_FRONT, GL_LINE);
+					glPolygonMode(GL_BACK, GL_LINE);
+					//glPointSize(5.f);
+					gridCam.draw(GL_TRIANGLE_STRIP);
+				glPopAttrib();
+	
 				//gridCam.draw(GL_LINES);
 
 	
