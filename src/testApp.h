@@ -31,6 +31,13 @@ class testApp : public ofBaseApp{
 	
 		bool enableAlpha;
 	
+		//effects switch
+		bool enableEffects1;
+		bool enableEffects2;
+		bool enableEffects3;
+		bool enableEffects4;
+
+
 		float eyeMeshTexCoord[640][480][2];
 	
 		int eyeCamW;

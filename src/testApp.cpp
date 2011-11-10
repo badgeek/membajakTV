@@ -22,20 +22,26 @@ void testApp::setup(){
 	
 	windowCamera.setDistance(100);
 	
-	enableAlpha = true;	
+	enableAlpha = true;
 	
+	enableEffects1 = true;
+	enableEffects2 = true;
+	enableEffects3 = true;
+	enableEffects4 = true;
+
 	ofToggleFullscreen();
 	
 	ofEnableBlendMode(OF_BLENDMODE_ADD);
 	//glEnable( GL_POINT_SMOOTH );
 
 	
-	CGPoint point;
-	point.x = 100;
-	point.y = 100;
-	CGWarpMouseCursorPosition(point);
-	CGPostMouseEvent(point, FALSE, 1, TRUE);   //mouse down
-	CGPostMouseEvent(point, FALSE, 1, FALSE);//mouse up
+	//mouse click
+	//CGPoint point;
+	//point.x = 100;
+	//point.y = 100;
+	//CGWarpMouseCursorPosition(point);
+	//CGPostMouseEvent(point, FALSE, 1, TRUE);   //mouse down
+	//CGPostMouseEvent(point, FALSE, 1, FALSE);//mouse up
 	
 }
 
@@ -67,44 +73,56 @@ void testApp::draw(){
 				fuxShader.setUniform1f("eyeMultiply", 100.0f);
 				fuxShader.setUniformTexture("eyeTexDepth", eyeCam.getTextureReference(), 0);
 	
-				gridCam.draw(GL_LINES);
+			if	(enableEffects1)
+			{
+				gridCam.draw(GL_LINES);				
+			}
 
-	
+			if	(enableEffects2)
+			{
 				glPushAttrib(GL_POLYGON_BIT);
-					//glEnable( GL_POINT_SMOOTH );
 					glFrontFace(GL_CW);
-					//glPolygonMode(GL_FRONT, GL_POINT);
-					//glPolygonMode(GL_BACK, GL_POINT);
 					glPointSize(2.5f);
 					gridCam.draw(GL_POINTS);
 				glPopAttrib();
+			}
+	
 			
-				/*glPushAttrib(GL_POLYGON_BIT);
-					//glEnable( GL_POINT_SMOOTH );
-					glFrontFace(GL_CW);
-					glPolygonMode(GL_FRONT, GL_LINE);
-					glPolygonMode(GL_BACK, GL_LINE);
-					//glPointSize(5.f);
-					gridCam.draw(GL_TRIANGLE_STRIP);
-				glPopAttrib();*/
-			 
-/*
+			if	(enableEffects3)
+			{
+				 glPushAttrib(GL_POLYGON_BIT);
+					 glFrontFace(GL_CW);
+					 glPolygonMode(GL_FRONT, GL_LINE);
+					 glPolygonMode(GL_BACK, GL_LINE);
+					 gridCam.draw(GL_TRIANGLE_STRIP);
+				 glPopAttrib();
+			}
+			
+			if	(enableEffects4)
+			{
 				glPushAttrib(GL_POLYGON_BIT);
-					//glEnable( GL_POINT_SMOOTH );
-					//glFrontFace(GL_CW);
-					glPolygonMode(GL_FRONT, GL_LINE);
-					glPolygonMode(GL_BACK, GL_LINE);
-					//glPointSize(5.f);
-					gridCam.draw(GL_TRIANGLE_STRIP);
-				glPopAttrib();
-	*/
+					glPushMatrix();
+						glTranslatef(0, 0, 20);
+						//glPolygonMode(GL_FRONT, GL_LINE);
+						//glPolygonMode(GL_BACK, GL_LINE);
+						glPointSize(5.f);
+						gridCam.draw(GL_POINTS);
+					glPopMatrix();
+				glPopAttrib();				
+			}
+
+
 			glPopMatrix();
 		
 			fuxShader.end();
 
+
 		windowCamera.end();
 	
-	ofDrawBitmapString("press f to fullscreen, n to normal, mouse x: " + ofToString(mouseX) + " mouseY:" + ofToString(mouseY), ofPoint(20,20));
+	
+	
+	ofDrawBitmapString("press f to fullscreen, n to normal, cam roll: " + ofToString(windowCamera.getOrientationEuler().x) + " cam pitch:" + ofToString(windowCamera.getOrientationEuler().y) + " cam z: " + ofToString(windowCamera.getPosition().z) , ofPoint(20,20));
+
 	
 	
 }
@@ -114,16 +132,31 @@ void testApp::keyPressed(int key){
 
 	printf("ascii:%i\n", key);
 	
-	if (key == 102) {
-		ofToggleFullscreen();
-	}else if (key ==  110) {
-		ofSetFullscreen(false);
-	}
-	
 	if (key == 97) {
-		//enableAlpha = !enableAlpha;
 		OSErr error = SendAppleEventToSystemProcess(kAEShutDown);  
 	}
+	
+	switch (key) {
+		case 102:
+			ofToggleFullscreen();
+			break;
+		case 43:
+			enableEffects1 = !enableEffects1;
+			break;
+		case 57:
+			enableEffects2 = !enableEffects2;
+			break;
+		case 56:
+			enableEffects3 = !enableEffects3;
+			break;
+		case 55:
+			enableEffects4 = !enableEffects4;
+			break;			
+		default:
+			break;
+	}
+	
+	
 }
 
 //--------------------------------------------------------------
