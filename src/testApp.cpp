@@ -19,6 +19,7 @@ void testApp::setup(){
 	gridCam.setMeshGrid(150, 150);
 	gridCam.setMeshSize(0.25, 0.25);
 	gridCam.updateMeshTexCoord();
+	gridCam.updateMeshVerCoord();
 	
 	windowCamera.setDistance(100);
 	

@@ -25,10 +25,16 @@ private:
 	
 	
 	float meshTexCoord[1000][1000][2];
+	float meshVerCoord[1000][1000][2];
+	
+	float meshMaxW;
+	float meshMaxH;
+	
 	
 public:
 	eyeMesh();
 	void updateMeshTexCoord();
+	void updateMeshVerCoord();
 	void setMeshGrid(int gridW, int gridH);
 	void setMeshSize(float sizeX, float sizeY);
 	void setMeshTextureSize(int width, int height);

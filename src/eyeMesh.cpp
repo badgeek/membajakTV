@@ -37,29 +37,43 @@ void eyeMesh::updateMeshTexCoord()
 	}
 }
 
-void eyeMesh::draw(GLenum  drawMode)
+void eyeMesh::updateMeshVerCoord()
 {
 	
-	glPushMatrix();
 	
-	float maxW = (float) meshScale * (((float)meshGridX-1.0f)*(float)meshSizeX - 1.0f);
-	float maxH = (float)meshScale * ((float)meshGridY*(float)meshSizeY -1);
+	meshMaxW = (float) meshScale * (((float)meshGridX-1.0f)*(float)meshSizeX - 1.0f);
+	meshMaxH = (float) meshScale * ((float)meshGridY*(float)meshSizeY -1);
 	
-	glTranslatef(-maxW/2, -maxH/2, 0);
+	//glTranslatef(-maxW/2, -maxH/2, 0);
 	
 	for (int i=0; i<(meshGridX-1) ; i++)
     {
-		glBegin(drawMode);
-		
 		for (int j = 0; j < meshGridY ; j++)
 		{
-			glTexCoord2f(meshTexCoord[i][j][0], meshTexCoord[i][j][1]); glVertex3f((float)meshScale * ((float)i*(float)meshSizeX - 1) ,		 (float)meshScale * ((float)j*(float)meshSizeY -1), 0.0);
-			glTexCoord2f(meshTexCoord[i+1][j][0], meshTexCoord[i+1][j][1]); glVertex3f((float)meshScale * (((float)i+1)*(float)meshSizeX - 1),   (float)meshScale * ((float)j*(float)meshSizeY -1), 0.0);
+			meshVerCoord[i][j][0]	= (float)meshScale * ((float)i*(float)meshSizeX - 1);
+			meshVerCoord[i][j][1]   = (float)meshScale * ((float)j*(float)meshSizeY -1);
+			meshVerCoord[i+1][j][0] = (float)meshScale * (((float)i+1)*(float)meshSizeX - 1);
+			meshVerCoord[i+1][j][1] = (float)meshScale * ((float)j*(float)meshSizeY -1);
 		}
-		
-		glEnd();
-		
     }	
+}
+
+void eyeMesh::draw(GLenum drawMode)
+{
+	glPushMatrix();
+	
+	glTranslatef(-meshMaxW/2, -meshMaxH/2, 0);
+
+	for (int i=0; i<(meshGridX-1) ; i++)
+    {
+		glBegin(drawMode);
+		for (int j = 0; j < meshGridY ; j++)
+		{
+			glTexCoord2f(meshTexCoord[i][j][0], meshTexCoord[i][j][1]); glVertex3f(meshVerCoord[i][j][0], meshVerCoord[i][j][1], 0.0f);
+			glTexCoord2f(meshTexCoord[i+1][j][1], meshTexCoord[i+1][j][1]); glVertex3f(meshVerCoord[i+1][j][0], meshVerCoord[i+1][j][1], 0.0f);			
+		}
+		glEnd();
+	}
 	
 	glPopMatrix();
 }
