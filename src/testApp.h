@@ -50,7 +50,11 @@ class testApp : public ofBaseApp, public hObject {
 	
 		//effects shader multiplier
 		float shaderMultiply;
-
+	
+		//camera zoom
+		float eyeCamZoom;
+		float eyeCamZoomPrev;
+	
 		float eyeMeshTexCoord[640][480][2];
 	
 		int eyeCamW;

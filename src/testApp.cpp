@@ -84,10 +84,12 @@ void testApp::setup(){
 	mainPanel->setBackgroundColor(0x000000);
 	
 	gui->setRootWidget(mainPanel);
-	
-	gui->setBorderColor(0xFFFFFF);
-	gui->setTextColor(0xFFFFFF);
-	gui->setCheckBoxColor(0xFFFFFF);
+
+	gui->setFillColor(0x20bfe9);
+	gui->setBorderColor(0x20bfe9);
+	gui->setTextColor(0x20bfe9);
+	gui->setCheckBoxColor(0xc0e0e9);
+	gui->setSliderColor(0xc0e0e9);
 	
 	//gui->addListeners();
 	
@@ -98,6 +100,8 @@ void testApp::setup(){
 	
 	hSlider* sliderZoom1 = gui->addSlider("slider1", mainPanel, HGUI_NEXT_ROW, gui->margin2, gui->margin2, 100);
 	hLabel * zoomLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "ZOOM");
+	sliderZoom1->setFloatVar(&eyeCamZoom);
+	sliderZoom1->setRange(-500, 800);
 	
 	//shader multiply
 	
@@ -173,7 +177,13 @@ void testApp::setup(){
 void testApp::update(){
 
 	eyeCam.grabFrame();
-		
+	
+	if (eyeCamZoom != eyeCamZoomPrev) {
+		windowCamera.setDistance(eyeCamZoom);
+		eyeCamZoomPrev = eyeCamZoom;
+	}
+	
+	
 }
 
 //--------------------------------------------------------------
@@ -264,11 +274,6 @@ void testApp::keyPressed(int key){
 
 	printf("ascii:%i\n", key);
 	
-	//hGui * gui = hGui::getInstance();
-	
-
-	
-	
 	if (key == 97) {
 		OSErr error = SendAppleEventToSystemProcess(kAEShutDown);  
 	}
@@ -291,21 +296,10 @@ void testApp::keyPressed(int key){
 			break;
 		case 103:
 			enableGui = !enableGui;
-			/*if (enableGui == true) {
-				gui->show();
-			}else {
-				gui->hide();
-			}*/
 			break;
 		default:
 			break;
 	}
-	
-	
-
-	
-	
-
 	
 	
 }
