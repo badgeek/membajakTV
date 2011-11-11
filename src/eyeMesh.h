@@ -30,14 +30,21 @@ private:
 	float meshMaxW;
 	float meshMaxH;
 	
+	GLuint meshDispList;
 	
 public:
 	eyeMesh();
+	
 	void updateMeshTexCoord();
 	void updateMeshVerCoord();
+	
+	void updateDisplayList();
+	void drawDisplayList(GLenum drawMode);
+
 	void setMeshGrid(int gridW, int gridH);
 	void setMeshSize(float sizeX, float sizeY);
 	void setMeshTextureSize(int width, int height);
 	void setMeshScale(int scale);
+	
 	void draw(GLenum  drawMode);
 };

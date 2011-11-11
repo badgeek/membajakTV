@@ -22,8 +22,10 @@ eyeMesh::eyeMesh()
 	meshTexW = 640;
 	meshTexH = 480;
 	
-	updateMeshTexCoord();
+	meshDispList = glGenLists(3);
 	
+	updateMeshTexCoord();
+	updateMeshVerCoord();
 }
 
 void eyeMesh::updateMeshTexCoord()
@@ -51,9 +53,10 @@ void eyeMesh::updateMeshVerCoord()
 		for (int j = 0; j < meshGridY ; j++)
 		{
 			meshVerCoord[i][j][0]	= (float)meshScale * ((float)i*(float)meshSizeX - 1);
-			meshVerCoord[i][j][1]   = (float)meshScale * ((float)j*(float)meshSizeY -1);
+			meshVerCoord[i][j][1]   = (float)meshScale * ((float)j*(float)meshSizeY - 1);
+			
 			meshVerCoord[i+1][j][0] = (float)meshScale * (((float)i+1)*(float)meshSizeX - 1);
-			meshVerCoord[i+1][j][1] = (float)meshScale * ((float)j*(float)meshSizeY -1);
+			meshVerCoord[i+1][j][1] = meshVerCoord[i][j][1];
 		}
     }	
 }
@@ -69,13 +72,48 @@ void eyeMesh::draw(GLenum drawMode)
 		glBegin(drawMode);
 		for (int j = 0; j < meshGridY ; j++)
 		{
-			glTexCoord2f(meshTexCoord[i][j][0], meshTexCoord[i][j][1]); glVertex3f(meshVerCoord[i][j][0], meshVerCoord[i][j][1], 0.0f);
-			glTexCoord2f(meshTexCoord[i+1][j][1], meshTexCoord[i+1][j][1]); glVertex3f(meshVerCoord[i+1][j][0], meshVerCoord[i+1][j][1], 0.0f);			
+			glTexCoord2f(meshTexCoord[i][j][0], meshTexCoord[i][j][1]); glVertex3f( meshVerCoord[i][j][0] ,  meshVerCoord[i][j][1], 0.0);
+			glTexCoord2f(meshTexCoord[i+1][j][0], meshTexCoord[i+1][j][1]); glVertex3f( meshVerCoord[i+1][j][0] ,  meshVerCoord[i+1][j][1], 0.0);
 		}
 		glEnd();
 	}
 	
 	glPopMatrix();
+}
+
+void eyeMesh::updateDisplayList()
+{
+	glNewList(meshDispList, GL_COMPILE);
+		draw(GL_TRIANGLE_STRIP);
+	glEndList();
+
+	glNewList(meshDispList+1, GL_COMPILE);
+		draw(GL_POINTS);
+	glEndList();
+
+	glNewList(meshDispList+2, GL_COMPILE);
+		draw(GL_LINES);
+	glEndList();
+	
+
+}
+
+void eyeMesh::drawDisplayList(GLenum drawMode)
+{
+	switch (drawMode) {
+		case GL_TRIANGLE_STRIP:
+			glCallList(meshDispList);
+			break;
+		case GL_POINTS:
+			glCallList(meshDispList+1);
+			break;
+		case GL_LINES:
+			glCallList(meshDispList+2);
+			break;
+		default:
+			glCallList(meshDispList);
+			break;
+	}
 }
 
 

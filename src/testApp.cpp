@@ -20,6 +20,7 @@ void testApp::setup(){
 	gridCam.setMeshSize(0.25, 0.25);
 	gridCam.updateMeshTexCoord();
 	gridCam.updateMeshVerCoord();
+	gridCam.updateDisplayList();
 	
 	windowCamera.setDistance(100);
 	
@@ -84,7 +85,7 @@ void testApp::draw(){
 				glPushAttrib(GL_POLYGON_BIT);
 					glFrontFace(GL_CW);
 					glPointSize(2.5f);
-					gridCam.draw(GL_POINTS);
+					gridCam.drawDisplayList(GL_POINTS);
 				glPopAttrib();
 			}
 	
@@ -95,7 +96,7 @@ void testApp::draw(){
 					 glFrontFace(GL_CW);
 					 glPolygonMode(GL_FRONT, GL_LINE);
 					 glPolygonMode(GL_BACK, GL_LINE);
-					 gridCam.draw(GL_TRIANGLE_STRIP);
+					 gridCam.drawDisplayList(GL_TRIANGLE_STRIP);
 				 glPopAttrib();
 			}
 			
@@ -107,7 +108,7 @@ void testApp::draw(){
 						//glPolygonMode(GL_FRONT, GL_LINE);
 						//glPolygonMode(GL_BACK, GL_LINE);
 						glPointSize(5.f);
-						gridCam.draw(GL_POINTS);
+						gridCam.drawDisplayList(GL_POINTS);
 					glPopMatrix();
 				glPopAttrib();				
 			}
