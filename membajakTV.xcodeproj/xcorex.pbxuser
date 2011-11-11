@@ -71,16 +71,16 @@
 	89441AE2146A0DDE00B22436 /* eyeMesh.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1171, 700}}";
-			sepNavSelRange = "{589, 0}";
-			sepNavVisRange = "{206, 587}";
+			sepNavSelRange = "{385, 0}";
+			sepNavVisRange = "{0, 456}";
 			sepNavWindowFrame = "{{15, 4}, {1336, 874}}";
 		};
 	};
 	89441AE3146A0DDE00B22436 /* eyeMesh.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 1988}}";
-			sepNavSelRange = "{2115, 15}";
-			sepNavVisRange = "{1832, 576}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 2016}}";
+			sepNavSelRange = "{1314, 0}";
+			sepNavVisRange = "{277, 890}";
 		};
 	};
 	894B48091468CF1B00AA9FF1 /* ofBaseTypes.h */ = {
@@ -106,16 +106,6 @@
 		rType = 0;
 		vrLen = 1231;
 		vrLoc = 4458;
-	};
-	895A7DF0146ACB4600790476 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
-		name = "testApp.h: 26";
-		rLen = 9;
-		rLoc = 595;
-		rType = 0;
-		vrLen = 781;
-		vrLoc = 84;
 	};
 	895A7DF1146ACB4600790476 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -171,45 +161,55 @@
 		vrLen = 1030;
 		vrLoc = 3241;
 	};
-	8994B594146CC1D9004F2601 /* PBXTextBookmark */ = {
+	8994B5BC146CD394004F2601 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
-		name = "testApp.cpp: 56";
+		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
+		name = "testApp.h: 29";
 		rLen = 0;
-		rLoc = 1196;
+		rLoc = 690;
 		rType = 0;
-		vrLen = 808;
-		vrLoc = 2432;
+		vrLen = 770;
+		vrLoc = 84;
 	};
-	89DA0B86146CC12500CE968A /* PBXTextBookmark */ = {
+	8994B5BD146CD394004F2601 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
-		name = "testApp.cpp: 56";
+		fRef = 89441AE2146A0DDE00B22436 /* eyeMesh.h */;
+		name = "eyeMesh.h: 28";
 		rLen = 0;
-		rLoc = 1196;
+		rLoc = 385;
 		rType = 0;
-		vrLen = 880;
-		vrLoc = 1887;
+		vrLen = 456;
+		vrLoc = 0;
 	};
-	89FCA442146CC1A100D7A937 /* PBXTextBookmark */ = {
+	8994B5BE146CD394004F2601 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 89441AE3146A0DDE00B22436 /* eyeMesh.cpp */;
-		name = "eyeMesh.cpp: 74";
+		name = "eyeMesh.cpp: 61";
 		rLen = 0;
-		rLoc = 1531;
+		rLoc = 1314;
 		rType = 0;
-		vrLen = 901;
-		vrLoc = 614;
+		vrLen = 890;
+		vrLoc = 277;
 	};
-	89FCA453146CC1B400D7A937 /* PBXTextBookmark */ = {
+	8994B5BF146CD394004F2601 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
-		name = "testApp.cpp: 58";
+		name = "testApp.cpp: 111";
 		rLen = 0;
-		rLoc = 1196;
+		rLoc = 2476;
 		rType = 0;
-		vrLen = 648;
-		vrLoc = 2670;
+		vrLen = 773;
+		vrLoc = 4644;
+	};
+	8994B5C0146CD394004F2601 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
+		name = "testApp.cpp: 82";
+		rLen = 0;
+		rLoc = 1599;
+		rType = 0;
+		vrLen = 723;
+		vrLoc = 1246;
 	};
 	89FD2D651468CBCD00F1DB58 /* membajakTV */ = {
 		isa = PBXExecutable;
@@ -315,20 +315,20 @@
 			PBXWorkspaceStateSaveDate = 342671822;
 		};
 		perUserProjectItems = {
-			893C0CA514698F5D00C2AA5F = 893C0CA514698F5D00C2AA5F /* PBXTextBookmark */;
-			893C0CA714698F5D00C2AA5F = 893C0CA714698F5D00C2AA5F /* PBXTextBookmark */;
-			893C0CBC1469921000C2AA5F = 893C0CBC1469921000C2AA5F /* PBXTextBookmark */;
-			893C0D5C14699AD400C2AA5F = 893C0D5C14699AD400C2AA5F /* PBXTextBookmark */;
-			894B48141468CF4D00AA9FF1 = 894B48141468CF4D00AA9FF1 /* PBXTextBookmark */;
-			895A7DF0146ACB4600790476 = 895A7DF0146ACB4600790476 /* PBXTextBookmark */;
-			895A7DF1146ACB4600790476 = 895A7DF1146ACB4600790476 /* PBXTextBookmark */;
-			897474D2146A46BC0016A929 = 897474D2146A46BC0016A929 /* PBXTextBookmark */;
-			897474D6146A46BC0016A929 = 897474D6146A46BC0016A929 /* PBXTextBookmark */;
-			897474D7146A46BC0016A929 = 897474D7146A46BC0016A929 /* PBXTextBookmark */;
-			8994B594146CC1D9004F2601 /* PBXTextBookmark */ = 8994B594146CC1D9004F2601 /* PBXTextBookmark */;
-			89DA0B86146CC12500CE968A = 89DA0B86146CC12500CE968A /* PBXTextBookmark */;
-			89FCA442146CC1A100D7A937 = 89FCA442146CC1A100D7A937 /* PBXTextBookmark */;
-			89FCA453146CC1B400D7A937 = 89FCA453146CC1B400D7A937 /* PBXTextBookmark */;
+			893C0CA514698F5D00C2AA5F /* PBXTextBookmark */ = 893C0CA514698F5D00C2AA5F /* PBXTextBookmark */;
+			893C0CA714698F5D00C2AA5F /* PBXTextBookmark */ = 893C0CA714698F5D00C2AA5F /* PBXTextBookmark */;
+			893C0CBC1469921000C2AA5F /* PBXTextBookmark */ = 893C0CBC1469921000C2AA5F /* PBXTextBookmark */;
+			893C0D5C14699AD400C2AA5F /* PBXTextBookmark */ = 893C0D5C14699AD400C2AA5F /* PBXTextBookmark */;
+			894B48141468CF4D00AA9FF1 /* PBXTextBookmark */ = 894B48141468CF4D00AA9FF1 /* PBXTextBookmark */;
+			895A7DF1146ACB4600790476 /* PBXTextBookmark */ = 895A7DF1146ACB4600790476 /* PBXTextBookmark */;
+			897474D2146A46BC0016A929 /* PBXTextBookmark */ = 897474D2146A46BC0016A929 /* PBXTextBookmark */;
+			897474D6146A46BC0016A929 /* PBXTextBookmark */ = 897474D6146A46BC0016A929 /* PBXTextBookmark */;
+			897474D7146A46BC0016A929 /* PBXTextBookmark */ = 897474D7146A46BC0016A929 /* PBXTextBookmark */;
+			8994B5BC146CD394004F2601 /* PBXTextBookmark */ = 8994B5BC146CD394004F2601 /* PBXTextBookmark */;
+			8994B5BD146CD394004F2601 /* PBXTextBookmark */ = 8994B5BD146CD394004F2601 /* PBXTextBookmark */;
+			8994B5BE146CD394004F2601 /* PBXTextBookmark */ = 8994B5BE146CD394004F2601 /* PBXTextBookmark */;
+			8994B5BF146CD394004F2601 /* PBXTextBookmark */ = 8994B5BF146CD394004F2601 /* PBXTextBookmark */;
+			8994B5C0146CD394004F2601 /* PBXTextBookmark */ = 8994B5C0146CD394004F2601 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 89FD2D8B1468CBD100F1DB58 /* Source Control */;
 		userBuildSettings = {
@@ -349,9 +349,9 @@
 	};
 	E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1860, 3626}}";
-			sepNavSelRange = "{2361, 0}";
-			sepNavVisRange = "{1711, 755}";
+			sepNavIntBoundsRect = "{{0, 0}, {1860, 3640}}";
+			sepNavSelRange = "{1599, 0}";
+			sepNavVisRange = "{1246, 723}";
 			sepNavWindowFrame = "{{104, 4}, {1336, 874}}";
 		};
 	};

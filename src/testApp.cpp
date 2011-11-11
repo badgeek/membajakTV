@@ -16,10 +16,17 @@ void testApp::setup(){
 	ofSetWindowShape(1024, 768);
 	ofBackground(0, 0, 0, 0);
 	
+	//mesh grid size
 	gridCam.setMeshGrid(150, 150);
+	
+	//spacing between mesh square
 	gridCam.setMeshSize(0.25, 0.25);
+	
+	//calculate mesh vertex and texture coordinate
 	gridCam.updateMeshTexCoord();
 	gridCam.updateMeshVerCoord();
+	
+	//compile display list
 	gridCam.updateDisplayList();
 	
 	windowCamera.setDistance(100);
@@ -31,10 +38,10 @@ void testApp::setup(){
 	enableEffects3 = true;
 	enableEffects4 = true;
 
+	//fullscreen mode
 	ofToggleFullscreen();
 	
 	ofEnableBlendMode(OF_BLENDMODE_ADD);
-	//glEnable( GL_POINT_SMOOTH );
 
 	
 	//mouse click
@@ -71,9 +78,10 @@ void testApp::draw(){
 			//glScalef(1.0, -1.0, 1.0);
 			glScalef(4.0, -3.0, 1);
 	
-				fuxShader.begin();
-				fuxShader.setUniform1f("eyeMultiply", 100.0f);
-				fuxShader.setUniformTexture("eyeTexDepth", eyeCam.getTextureReference(), 0);
+			fuxShader.begin();
+			
+			fuxShader.setUniform1f("eyeMultiply", 100.0f);
+			fuxShader.setUniformTexture("eyeTexDepth", eyeCam.getTextureReference(), 0);
 	
 			if	(enableEffects1)
 			{

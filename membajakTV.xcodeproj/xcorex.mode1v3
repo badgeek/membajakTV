@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -314,6 +312,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -331,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8994B594146CC1D9004F2601</string>
+										<string>8994B5C0146CD394004F2601</string>
 										<key>history</key>
 										<array>
 											<string>894B48141468CF4D00AA9FF1</string>
@@ -342,10 +342,11 @@
 											<string>897474D2146A46BC0016A929</string>
 											<string>897474D6146A46BC0016A929</string>
 											<string>897474D7146A46BC0016A929</string>
-											<string>895A7DF0146ACB4600790476</string>
 											<string>895A7DF1146ACB4600790476</string>
-											<string>89FCA442146CC1A100D7A937</string>
-											<string>89FCA453146CC1B400D7A937</string>
+											<string>8994B5BC146CD394004F2601</string>
+											<string>8994B5BD146CD394004F2601</string>
+											<string>8994B5BE146CD394004F2601</string>
+											<string>8994B5BF146CD394004F2601</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -543,7 +544,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>8994B59F146CC1D9004F2601</string>
 		<string>8994B5A0146CC1D9004F2601</string>
 		<string>8994B5A1146CC1D9004F2601</string>
 		<string>1C78EAAD065D492600B07095</string>
