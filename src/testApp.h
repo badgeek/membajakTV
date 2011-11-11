@@ -3,8 +3,10 @@
 #include <Carbon/Carbon.h>  
 #include "ofMain.h"
 #include "eyeMesh.h"
+#include "hGui_all.h"
 
-class testApp : public ofBaseApp{
+
+class testApp : public ofBaseApp, public hObject {
 
 	public:
 		void setup();
@@ -20,6 +22,8 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+		void exit();
+
 	
 		OSStatus SendAppleEventToSystemProcess(AEEventID EventToSend);  
 	
@@ -30,6 +34,7 @@ class testApp : public ofBaseApp{
 		ofFbo			eyeCamFBO;
 	
 		bool enableAlpha;
+		bool enableGui;
 	
 		//effects switch
 		bool enableEffects1;
@@ -37,6 +42,14 @@ class testApp : public ofBaseApp{
 		bool enableEffects3;
 		bool enableEffects4;
 
+		//effects translate
+		float effectsTranslate1;
+		float effectsTranslate2;
+		float effectsTranslate3;
+		float effectsTranslate4;
+	
+		//effects shader multiplier
+		float shaderMultiply;
 
 		float eyeMeshTexCoord[640][480][2];
 	

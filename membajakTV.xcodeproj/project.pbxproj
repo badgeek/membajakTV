@@ -8,6 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		89441AE4146A0DDE00B22436 /* eyeMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89441AE3146A0DDE00B22436 /* eyeMesh.cpp */; };
+		89D2166C146D6F40006A0167 /* hEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21620146D6F40006A0167 /* hEvents.cpp */; };
+		89D2166D146D6F40006A0167 /* hSymbols.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21623146D6F40006A0167 /* hSymbols.cpp */; };
+		89D2166E146D6F40006A0167 /* hStringUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21626146D6F40006A0167 /* hStringUtils.cpp */; };
+		89D2166F146D6F40006A0167 /* hTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21629146D6F40006A0167 /* hTable.cpp */; };
+		89D21670146D6F40006A0167 /* h2DSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2162D146D6F40006A0167 /* h2DSlider.cpp */; };
+		89D21671146D6F40006A0167 /* hAlert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2162F146D6F40006A0167 /* hAlert.cpp */; };
+		89D21672146D6F40006A0167 /* hAlertLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21631146D6F40006A0167 /* hAlertLabel.cpp */; };
+		89D21673146D6F40006A0167 /* hButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21633146D6F40006A0167 /* hButton.cpp */; };
+		89D21674146D6F40006A0167 /* hButtonBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21635146D6F40006A0167 /* hButtonBox.cpp */; };
+		89D21675146D6F40006A0167 /* hButtonBoxItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21637146D6F40006A0167 /* hButtonBoxItem.cpp */; };
+		89D21676146D6F40006A0167 /* hCheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21639146D6F40006A0167 /* hCheckBox.cpp */; };
+		89D21677146D6F40006A0167 /* hCounterLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2163B146D6F40006A0167 /* hCounterLabel.cpp */; };
+		89D21678146D6F40006A0167 /* hDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2163D146D6F40006A0167 /* hDialog.cpp */; };
+		89D21679146D6F40006A0167 /* hDialogButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2163F146D6F40006A0167 /* hDialogButton.cpp */; };
+		89D2167A146D6F40006A0167 /* hDrawingPrimitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21641146D6F40006A0167 /* hDrawingPrimitives.cpp */; };
+		89D2167B146D6F40006A0167 /* hGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21643146D6F40006A0167 /* hGui.cpp */; };
+		89D2167C146D6F40006A0167 /* hIncButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21646146D6F40006A0167 /* hIncButton.cpp */; };
+		89D2167D146D6F40006A0167 /* hLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21648146D6F40006A0167 /* hLabel.cpp */; };
+		89D2167E146D6F40006A0167 /* hListBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2164A146D6F40006A0167 /* hListBox.cpp */; };
+		89D2167F146D6F40006A0167 /* hListItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2164C146D6F40006A0167 /* hListItem.cpp */; };
+		89D21680146D6F40006A0167 /* hMessageBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2164E146D6F40006A0167 /* hMessageBox.cpp */; };
+		89D21681146D6F40006A0167 /* hNumberBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21650146D6F40006A0167 /* hNumberBox.cpp */; };
+		89D21682146D6F40006A0167 /* hPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21652146D6F40006A0167 /* hPanel.cpp */; };
+		89D21683146D6F40006A0167 /* hScrollBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21654146D6F40006A0167 /* hScrollBar.cpp */; };
+		89D21684146D6F40006A0167 /* hScrollButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21656146D6F40006A0167 /* hScrollButton.cpp */; };
+		89D21685146D6F40006A0167 /* hSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21658146D6F40006A0167 /* hSlider.cpp */; };
+		89D21686146D6F40006A0167 /* hSliderBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2165A146D6F40006A0167 /* hSliderBox.cpp */; };
+		89D21687146D6F40006A0167 /* hStatusBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2165C146D6F40006A0167 /* hStatusBar.cpp */; };
+		89D21688146D6F40006A0167 /* hTabBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2165E146D6F40006A0167 /* hTabBox.cpp */; };
+		89D21689146D6F40006A0167 /* hTabBoxItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21660146D6F40006A0167 /* hTabBoxItem.cpp */; };
+		89D2168A146D6F40006A0167 /* hTextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21662146D6F40006A0167 /* hTextArea.cpp */; };
+		89D2168B146D6F40006A0167 /* hTextAreaButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21664146D6F40006A0167 /* hTextAreaButton.cpp */; };
+		89D2168C146D6F40006A0167 /* hTextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21666146D6F40006A0167 /* hTextBox.cpp */; };
+		89D2168D146D6F40006A0167 /* hTScrollBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D21668146D6F40006A0167 /* hTScrollBar.cpp */; };
+		89D2168E146D6F40006A0167 /* hWidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D2166A146D6F40006A0167 /* hWidget.cpp */; };
+		89D216A7146D6FCC006A0167 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D216A0146D6FCC006A0167 /* tinyxml.cpp */; };
+		89D216A8146D6FCC006A0167 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D216A2146D6FCC006A0167 /* tinyxmlerror.cpp */; };
+		89D216A9146D6FCC006A0167 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D216A3146D6FCC006A0167 /* tinyxmlparser.cpp */; };
+		89D216AA146D6FCC006A0167 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89D216A5146D6FCC006A0167 /* ofxXmlSettings.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -60,6 +99,85 @@
 /* Begin PBXFileReference section */
 		89441AE2146A0DDE00B22436 /* eyeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeMesh.h; sourceTree = "<group>"; };
 		89441AE3146A0DDE00B22436 /* eyeMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eyeMesh.cpp; sourceTree = "<group>"; };
+		89D21620146D6F40006A0167 /* hEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hEvents.cpp; sourceTree = "<group>"; };
+		89D21621146D6F40006A0167 /* hEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hEvents.h; sourceTree = "<group>"; };
+		89D21622146D6F40006A0167 /* hObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hObject.h; sourceTree = "<group>"; };
+		89D21623146D6F40006A0167 /* hSymbols.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hSymbols.cpp; sourceTree = "<group>"; };
+		89D21624146D6F40006A0167 /* hSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hSymbols.h; sourceTree = "<group>"; };
+		89D21626146D6F40006A0167 /* hStringUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hStringUtils.cpp; sourceTree = "<group>"; };
+		89D21627146D6F40006A0167 /* hStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hStringUtils.h; sourceTree = "<group>"; };
+		89D21629146D6F40006A0167 /* hTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hTable.cpp; sourceTree = "<group>"; };
+		89D2162A146D6F40006A0167 /* hTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hTable.h; sourceTree = "<group>"; };
+		89D2162D146D6F40006A0167 /* h2DSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = h2DSlider.cpp; sourceTree = "<group>"; };
+		89D2162E146D6F40006A0167 /* h2DSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = h2DSlider.h; sourceTree = "<group>"; };
+		89D2162F146D6F40006A0167 /* hAlert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hAlert.cpp; sourceTree = "<group>"; };
+		89D21630146D6F40006A0167 /* hAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hAlert.h; sourceTree = "<group>"; };
+		89D21631146D6F40006A0167 /* hAlertLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hAlertLabel.cpp; sourceTree = "<group>"; };
+		89D21632146D6F40006A0167 /* hAlertLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hAlertLabel.h; sourceTree = "<group>"; };
+		89D21633146D6F40006A0167 /* hButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hButton.cpp; sourceTree = "<group>"; };
+		89D21634146D6F40006A0167 /* hButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hButton.h; sourceTree = "<group>"; };
+		89D21635146D6F40006A0167 /* hButtonBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hButtonBox.cpp; sourceTree = "<group>"; };
+		89D21636146D6F40006A0167 /* hButtonBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hButtonBox.h; sourceTree = "<group>"; };
+		89D21637146D6F40006A0167 /* hButtonBoxItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hButtonBoxItem.cpp; sourceTree = "<group>"; };
+		89D21638146D6F40006A0167 /* hButtonBoxItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hButtonBoxItem.h; sourceTree = "<group>"; };
+		89D21639146D6F40006A0167 /* hCheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hCheckBox.cpp; sourceTree = "<group>"; };
+		89D2163A146D6F40006A0167 /* hCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hCheckBox.h; sourceTree = "<group>"; };
+		89D2163B146D6F40006A0167 /* hCounterLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hCounterLabel.cpp; sourceTree = "<group>"; };
+		89D2163C146D6F40006A0167 /* hCounterLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hCounterLabel.h; sourceTree = "<group>"; };
+		89D2163D146D6F40006A0167 /* hDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hDialog.cpp; sourceTree = "<group>"; };
+		89D2163E146D6F40006A0167 /* hDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hDialog.h; sourceTree = "<group>"; };
+		89D2163F146D6F40006A0167 /* hDialogButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hDialogButton.cpp; sourceTree = "<group>"; };
+		89D21640146D6F40006A0167 /* hDialogButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hDialogButton.h; sourceTree = "<group>"; };
+		89D21641146D6F40006A0167 /* hDrawingPrimitives.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hDrawingPrimitives.cpp; sourceTree = "<group>"; };
+		89D21642146D6F40006A0167 /* hDrawingPrimitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hDrawingPrimitives.h; sourceTree = "<group>"; };
+		89D21643146D6F40006A0167 /* hGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hGui.cpp; sourceTree = "<group>"; };
+		89D21644146D6F40006A0167 /* hGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hGui.h; sourceTree = "<group>"; };
+		89D21645146D6F40006A0167 /* hGui_all.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hGui_all.h; sourceTree = "<group>"; };
+		89D21646146D6F40006A0167 /* hIncButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hIncButton.cpp; sourceTree = "<group>"; };
+		89D21647146D6F40006A0167 /* hIncButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hIncButton.h; sourceTree = "<group>"; };
+		89D21648146D6F40006A0167 /* hLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hLabel.cpp; sourceTree = "<group>"; };
+		89D21649146D6F40006A0167 /* hLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hLabel.h; sourceTree = "<group>"; };
+		89D2164A146D6F40006A0167 /* hListBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hListBox.cpp; sourceTree = "<group>"; };
+		89D2164B146D6F40006A0167 /* hListBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hListBox.h; sourceTree = "<group>"; };
+		89D2164C146D6F40006A0167 /* hListItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hListItem.cpp; sourceTree = "<group>"; };
+		89D2164D146D6F40006A0167 /* hListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hListItem.h; sourceTree = "<group>"; };
+		89D2164E146D6F40006A0167 /* hMessageBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hMessageBox.cpp; sourceTree = "<group>"; };
+		89D2164F146D6F40006A0167 /* hMessageBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hMessageBox.h; sourceTree = "<group>"; };
+		89D21650146D6F40006A0167 /* hNumberBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hNumberBox.cpp; sourceTree = "<group>"; };
+		89D21651146D6F40006A0167 /* hNumberBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hNumberBox.h; sourceTree = "<group>"; };
+		89D21652146D6F40006A0167 /* hPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hPanel.cpp; sourceTree = "<group>"; };
+		89D21653146D6F40006A0167 /* hPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hPanel.h; sourceTree = "<group>"; };
+		89D21654146D6F40006A0167 /* hScrollBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hScrollBar.cpp; sourceTree = "<group>"; };
+		89D21655146D6F40006A0167 /* hScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hScrollBar.h; sourceTree = "<group>"; };
+		89D21656146D6F40006A0167 /* hScrollButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hScrollButton.cpp; sourceTree = "<group>"; };
+		89D21657146D6F40006A0167 /* hScrollButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hScrollButton.h; sourceTree = "<group>"; };
+		89D21658146D6F40006A0167 /* hSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hSlider.cpp; sourceTree = "<group>"; };
+		89D21659146D6F40006A0167 /* hSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hSlider.h; sourceTree = "<group>"; };
+		89D2165A146D6F40006A0167 /* hSliderBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hSliderBox.cpp; sourceTree = "<group>"; };
+		89D2165B146D6F40006A0167 /* hSliderBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hSliderBox.h; sourceTree = "<group>"; };
+		89D2165C146D6F40006A0167 /* hStatusBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hStatusBar.cpp; sourceTree = "<group>"; };
+		89D2165D146D6F40006A0167 /* hStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hStatusBar.h; sourceTree = "<group>"; };
+		89D2165E146D6F40006A0167 /* hTabBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hTabBox.cpp; sourceTree = "<group>"; };
+		89D2165F146D6F40006A0167 /* hTabBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hTabBox.h; sourceTree = "<group>"; };
+		89D21660146D6F40006A0167 /* hTabBoxItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hTabBoxItem.cpp; sourceTree = "<group>"; };
+		89D21661146D6F40006A0167 /* hTabBoxItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hTabBoxItem.h; sourceTree = "<group>"; };
+		89D21662146D6F40006A0167 /* hTextArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hTextArea.cpp; sourceTree = "<group>"; };
+		89D21663146D6F40006A0167 /* hTextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hTextArea.h; sourceTree = "<group>"; };
+		89D21664146D6F40006A0167 /* hTextAreaButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hTextAreaButton.cpp; sourceTree = "<group>"; };
+		89D21665146D6F40006A0167 /* hTextAreaButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hTextAreaButton.h; sourceTree = "<group>"; };
+		89D21666146D6F40006A0167 /* hTextBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hTextBox.cpp; sourceTree = "<group>"; };
+		89D21667146D6F40006A0167 /* hTextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hTextBox.h; sourceTree = "<group>"; };
+		89D21668146D6F40006A0167 /* hTScrollBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hTScrollBar.cpp; sourceTree = "<group>"; };
+		89D21669146D6F40006A0167 /* hTScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hTScrollBar.h; sourceTree = "<group>"; };
+		89D2166A146D6F40006A0167 /* hWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hWidget.cpp; sourceTree = "<group>"; };
+		89D2166B146D6F40006A0167 /* hWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hWidget.h; sourceTree = "<group>"; };
+		89D2169E146D6FCC006A0167 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
+		89D216A0146D6FCC006A0167 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		89D216A1146D6FCC006A0167 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		89D216A2146D6FCC006A0167 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		89D216A3146D6FCC006A0167 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		89D216A5146D6FCC006A0167 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		89D216A6146D6FCC006A0167 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -108,9 +226,171 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89D2161D146D6F40006A0167 /* ofxhUtils */ = {
+			isa = PBXGroup;
+			children = (
+				89D2161E146D6F40006A0167 /* src */,
+			);
+			name = ofxhUtils;
+			path = ../../../addons/ofxhUtils;
+			sourceTree = SOURCE_ROOT;
+		};
+		89D2161E146D6F40006A0167 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				89D2161F146D6F40006A0167 /* hEvents */,
+				89D21625146D6F40006A0167 /* hStringUtils */,
+				89D21628146D6F40006A0167 /* hTable */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		89D2161F146D6F40006A0167 /* hEvents */ = {
+			isa = PBXGroup;
+			children = (
+				89D21620146D6F40006A0167 /* hEvents.cpp */,
+				89D21621146D6F40006A0167 /* hEvents.h */,
+				89D21622146D6F40006A0167 /* hObject.h */,
+				89D21623146D6F40006A0167 /* hSymbols.cpp */,
+				89D21624146D6F40006A0167 /* hSymbols.h */,
+			);
+			path = hEvents;
+			sourceTree = "<group>";
+		};
+		89D21625146D6F40006A0167 /* hStringUtils */ = {
+			isa = PBXGroup;
+			children = (
+				89D21626146D6F40006A0167 /* hStringUtils.cpp */,
+				89D21627146D6F40006A0167 /* hStringUtils.h */,
+			);
+			path = hStringUtils;
+			sourceTree = "<group>";
+		};
+		89D21628146D6F40006A0167 /* hTable */ = {
+			isa = PBXGroup;
+			children = (
+				89D21629146D6F40006A0167 /* hTable.cpp */,
+				89D2162A146D6F40006A0167 /* hTable.h */,
+			);
+			path = hTable;
+			sourceTree = "<group>";
+		};
+		89D2162B146D6F40006A0167 /* ofxhGui */ = {
+			isa = PBXGroup;
+			children = (
+				89D2162C146D6F40006A0167 /* src */,
+			);
+			name = ofxhGui;
+			path = ../../../addons/ofxhGui;
+			sourceTree = SOURCE_ROOT;
+		};
+		89D2162C146D6F40006A0167 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				89D2162D146D6F40006A0167 /* h2DSlider.cpp */,
+				89D2162E146D6F40006A0167 /* h2DSlider.h */,
+				89D2162F146D6F40006A0167 /* hAlert.cpp */,
+				89D21630146D6F40006A0167 /* hAlert.h */,
+				89D21631146D6F40006A0167 /* hAlertLabel.cpp */,
+				89D21632146D6F40006A0167 /* hAlertLabel.h */,
+				89D21633146D6F40006A0167 /* hButton.cpp */,
+				89D21634146D6F40006A0167 /* hButton.h */,
+				89D21635146D6F40006A0167 /* hButtonBox.cpp */,
+				89D21636146D6F40006A0167 /* hButtonBox.h */,
+				89D21637146D6F40006A0167 /* hButtonBoxItem.cpp */,
+				89D21638146D6F40006A0167 /* hButtonBoxItem.h */,
+				89D21639146D6F40006A0167 /* hCheckBox.cpp */,
+				89D2163A146D6F40006A0167 /* hCheckBox.h */,
+				89D2163B146D6F40006A0167 /* hCounterLabel.cpp */,
+				89D2163C146D6F40006A0167 /* hCounterLabel.h */,
+				89D2163D146D6F40006A0167 /* hDialog.cpp */,
+				89D2163E146D6F40006A0167 /* hDialog.h */,
+				89D2163F146D6F40006A0167 /* hDialogButton.cpp */,
+				89D21640146D6F40006A0167 /* hDialogButton.h */,
+				89D21641146D6F40006A0167 /* hDrawingPrimitives.cpp */,
+				89D21642146D6F40006A0167 /* hDrawingPrimitives.h */,
+				89D21643146D6F40006A0167 /* hGui.cpp */,
+				89D21644146D6F40006A0167 /* hGui.h */,
+				89D21645146D6F40006A0167 /* hGui_all.h */,
+				89D21646146D6F40006A0167 /* hIncButton.cpp */,
+				89D21647146D6F40006A0167 /* hIncButton.h */,
+				89D21648146D6F40006A0167 /* hLabel.cpp */,
+				89D21649146D6F40006A0167 /* hLabel.h */,
+				89D2164A146D6F40006A0167 /* hListBox.cpp */,
+				89D2164B146D6F40006A0167 /* hListBox.h */,
+				89D2164C146D6F40006A0167 /* hListItem.cpp */,
+				89D2164D146D6F40006A0167 /* hListItem.h */,
+				89D2164E146D6F40006A0167 /* hMessageBox.cpp */,
+				89D2164F146D6F40006A0167 /* hMessageBox.h */,
+				89D21650146D6F40006A0167 /* hNumberBox.cpp */,
+				89D21651146D6F40006A0167 /* hNumberBox.h */,
+				89D21652146D6F40006A0167 /* hPanel.cpp */,
+				89D21653146D6F40006A0167 /* hPanel.h */,
+				89D21654146D6F40006A0167 /* hScrollBar.cpp */,
+				89D21655146D6F40006A0167 /* hScrollBar.h */,
+				89D21656146D6F40006A0167 /* hScrollButton.cpp */,
+				89D21657146D6F40006A0167 /* hScrollButton.h */,
+				89D21658146D6F40006A0167 /* hSlider.cpp */,
+				89D21659146D6F40006A0167 /* hSlider.h */,
+				89D2165A146D6F40006A0167 /* hSliderBox.cpp */,
+				89D2165B146D6F40006A0167 /* hSliderBox.h */,
+				89D2165C146D6F40006A0167 /* hStatusBar.cpp */,
+				89D2165D146D6F40006A0167 /* hStatusBar.h */,
+				89D2165E146D6F40006A0167 /* hTabBox.cpp */,
+				89D2165F146D6F40006A0167 /* hTabBox.h */,
+				89D21660146D6F40006A0167 /* hTabBoxItem.cpp */,
+				89D21661146D6F40006A0167 /* hTabBoxItem.h */,
+				89D21662146D6F40006A0167 /* hTextArea.cpp */,
+				89D21663146D6F40006A0167 /* hTextArea.h */,
+				89D21664146D6F40006A0167 /* hTextAreaButton.cpp */,
+				89D21665146D6F40006A0167 /* hTextAreaButton.h */,
+				89D21666146D6F40006A0167 /* hTextBox.cpp */,
+				89D21667146D6F40006A0167 /* hTextBox.h */,
+				89D21668146D6F40006A0167 /* hTScrollBar.cpp */,
+				89D21669146D6F40006A0167 /* hTScrollBar.h */,
+				89D2166A146D6F40006A0167 /* hWidget.cpp */,
+				89D2166B146D6F40006A0167 /* hWidget.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		89D2169D146D6FCC006A0167 /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				89D2169E146D6FCC006A0167 /* install.xml */,
+				89D2169F146D6FCC006A0167 /* libs */,
+				89D216A4146D6FCC006A0167 /* src */,
+			);
+			name = ofxXmlSettings;
+			path = ../../../addons/ofxXmlSettings;
+			sourceTree = SOURCE_ROOT;
+		};
+		89D2169F146D6FCC006A0167 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				89D216A0146D6FCC006A0167 /* tinyxml.cpp */,
+				89D216A1146D6FCC006A0167 /* tinyxml.h */,
+				89D216A2146D6FCC006A0167 /* tinyxmlerror.cpp */,
+				89D216A3146D6FCC006A0167 /* tinyxmlparser.cpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		89D216A4146D6FCC006A0167 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				89D216A5146D6FCC006A0167 /* ofxXmlSettings.cpp */,
+				89D216A6146D6FCC006A0167 /* ofxXmlSettings.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				89D2169D146D6FCC006A0167 /* ofxXmlSettings */,
+				89D2161D146D6F40006A0167 /* ofxhUtils */,
+				89D2162B146D6F40006A0167 /* ofxhGui */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -280,6 +560,45 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				89441AE4146A0DDE00B22436 /* eyeMesh.cpp in Sources */,
+				89D2166C146D6F40006A0167 /* hEvents.cpp in Sources */,
+				89D2166D146D6F40006A0167 /* hSymbols.cpp in Sources */,
+				89D2166E146D6F40006A0167 /* hStringUtils.cpp in Sources */,
+				89D2166F146D6F40006A0167 /* hTable.cpp in Sources */,
+				89D21670146D6F40006A0167 /* h2DSlider.cpp in Sources */,
+				89D21671146D6F40006A0167 /* hAlert.cpp in Sources */,
+				89D21672146D6F40006A0167 /* hAlertLabel.cpp in Sources */,
+				89D21673146D6F40006A0167 /* hButton.cpp in Sources */,
+				89D21674146D6F40006A0167 /* hButtonBox.cpp in Sources */,
+				89D21675146D6F40006A0167 /* hButtonBoxItem.cpp in Sources */,
+				89D21676146D6F40006A0167 /* hCheckBox.cpp in Sources */,
+				89D21677146D6F40006A0167 /* hCounterLabel.cpp in Sources */,
+				89D21678146D6F40006A0167 /* hDialog.cpp in Sources */,
+				89D21679146D6F40006A0167 /* hDialogButton.cpp in Sources */,
+				89D2167A146D6F40006A0167 /* hDrawingPrimitives.cpp in Sources */,
+				89D2167B146D6F40006A0167 /* hGui.cpp in Sources */,
+				89D2167C146D6F40006A0167 /* hIncButton.cpp in Sources */,
+				89D2167D146D6F40006A0167 /* hLabel.cpp in Sources */,
+				89D2167E146D6F40006A0167 /* hListBox.cpp in Sources */,
+				89D2167F146D6F40006A0167 /* hListItem.cpp in Sources */,
+				89D21680146D6F40006A0167 /* hMessageBox.cpp in Sources */,
+				89D21681146D6F40006A0167 /* hNumberBox.cpp in Sources */,
+				89D21682146D6F40006A0167 /* hPanel.cpp in Sources */,
+				89D21683146D6F40006A0167 /* hScrollBar.cpp in Sources */,
+				89D21684146D6F40006A0167 /* hScrollButton.cpp in Sources */,
+				89D21685146D6F40006A0167 /* hSlider.cpp in Sources */,
+				89D21686146D6F40006A0167 /* hSliderBox.cpp in Sources */,
+				89D21687146D6F40006A0167 /* hStatusBar.cpp in Sources */,
+				89D21688146D6F40006A0167 /* hTabBox.cpp in Sources */,
+				89D21689146D6F40006A0167 /* hTabBoxItem.cpp in Sources */,
+				89D2168A146D6F40006A0167 /* hTextArea.cpp in Sources */,
+				89D2168B146D6F40006A0167 /* hTextAreaButton.cpp in Sources */,
+				89D2168C146D6F40006A0167 /* hTextBox.cpp in Sources */,
+				89D2168D146D6F40006A0167 /* hTScrollBar.cpp in Sources */,
+				89D2168E146D6F40006A0167 /* hWidget.cpp in Sources */,
+				89D216A7146D6FCC006A0167 /* tinyxml.cpp in Sources */,
+				89D216A8146D6FCC006A0167 /* tinyxmlerror.cpp in Sources */,
+				89D216A9146D6FCC006A0167 /* tinyxmlparser.cpp in Sources */,
+				89D216AA146D6FCC006A0167 /* ofxXmlSettings.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
