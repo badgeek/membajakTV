@@ -76,85 +76,167 @@ void testApp::setup(){
 	
 	gui->setup("fonts/DIN.otf", 9);  // ... but test yourself which one is better for you
 	
-	hPanel * mainPanel = gui->addPanel("mainPanel", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3, 250, 0, false);
 	
+	// DEFAULT / GLOBAL / GUI SETTINGS
 	
-	mainPanel->setVisibleBackground(true);
+		gui->setBorderColor(0x20bfe9);
+		gui->setTextColor(0x20bfe9);
+		gui->setCheckBoxColor(0xc0e0e9);
+		gui->setSliderColor(0xc0e0e9);
+		gui->setTabBoxSelColor(0xCCCCCC);	
+		
+		gui->setBackgroundColor	(0x333333);
+		gui->setBorderColor		(0xCCCCCC);
+		gui->setFillColor		(0x555555);
+		gui->setAltFillColor	(0x557766);
+		gui->setButtonShadowColor(0x999999);
+		
+		gui->setScrollHandleColor(0xDDDDDD);
+		gui->setScrollButtonColor(0xDDDDDD);
+		gui->setTextColor		(0xFFFFFF);
+		gui->setTextColor2		(0x000000);
+		gui->setAlertTextColor	(0xCCCCCC);
+		
+		gui->setDisableColor	(0x999999);
+		gui->setEditTextColor	(0x113388);
+		gui->setEditTextColor2	(0x113388);
+		gui->setEditBackColor	(0xCCDDEE);
+		gui->setCaretColor		(0x000000);
+		
+		gui->setLabelSelColor	(0xBBBBFF);
+		gui->setItemSelColor	(0xBBBBBB);
+		gui->setItemSelTextColor(0x333333);
+		gui->setButtonBoxSelColor(0x44CC77);
+		
+		gui->setCheckBoxColor	(0x44CC77);
+		gui->setSliderColor		(0x999999);
+		gui->setTwoDSliderColor	(0x33BB66);
+		gui->setCounterColor	(0x33BB66);
+		
+		gui->setDialogColor		(0xE5E5E5);
+		gui->setMessageBoxColor	(0x77FFAA);
+		gui->setAlertColor		(0xFF7777);
 	
-	mainPanel->setBackgroundColor(0x000000);
+	//INITIATE MAIN PANEL
 	
-	gui->setRootWidget(mainPanel);
+		hPanel * mainPanel = gui->addPanel("mainPanel", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3+gui->margin1, 250, 0, true);
+		mainPanel->setVisibleBackground(false);
+		mainPanel->setBackgroundColor(0x000000);
 
-	gui->setFillColor(0x20bfe9);
-	gui->setBorderColor(0x20bfe9);
-	gui->setTextColor(0x20bfe9);
-	gui->setCheckBoxColor(0xc0e0e9);
-	gui->setSliderColor(0xc0e0e9);
+		hPanel * mainPanel1 = gui->addPanel("mainPanel1", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3+gui->margin1, 250, 0, true);
+		mainPanel1->setVisibleBackground(false);
+		mainPanel1->setBackgroundColor(0x000000);
 	
-	//gui->addListeners();
+	//INITIATE SUBPANEL FOR MAINPANEL
+	
+		//int panelSize1 = 200;
+		//hPanel * subPanel = gui->addPanel("subPanel", mainPanel, HGUI_NEXT_ROW, gui->margin1, gui->margin1+gui->margin3+gui->margin1, panelSize1, panelSize1, true);
+		//hPanel * subPanel1 = gui->addPanel("subPanel1", mainPanel, HGUI_NEXT_ROW, gui->margin1, gui->margin2, panelSize1, panelSize1, true);
 	
 	
-	hLabel * sliderLabel0 = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2, "PRESS F TO FULLSCREEN N TO NORMAL");
+	//BEGIN GUI FOR MAIN PANEL / VIDEO EFFECTS
 	
-	//camera zoom
-	
-	hSlider* sliderZoom1 = gui->addSlider("slider1", mainPanel, HGUI_NEXT_ROW, gui->margin2, gui->margin2, 100);
-	hLabel * zoomLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "ZOOM");
-	sliderZoom1->setFloatVar(&eyeCamZoom);
-	sliderZoom1->setRange(-500, 800);
-	
-	//shader multiply
-	
-	hSlider* sliderMultiplier1 = gui->addSlider("slider2", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
-	hLabel * multiplierLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX MULTIPLIER");
-	sliderMultiplier1->setRange(-500, 500);
-	sliderMultiplier1->setFloatVar(&shaderMultiply);
-	
-	//vertex displace effects 1-4
-	
-	hSlider* sliderVertex1 = gui->addSlider("sliderVertex1", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
-	hLabel * vertexLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX TRANSLATE 1");
-	sliderVertex1->setFloatVar(&effectsTranslate1);
-	
-	hSlider* sliderVertex2 = gui->addSlider("sliderVertex2", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
-	hLabel * vertexLabel2 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX TRANSLATE 2");
-	sliderVertex2->setFloatVar(&effectsTranslate2);
+		hLabel * sliderLabelInfo1 = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2+gui->margin2, "GPUFUXETTRA VIDEO EFFECTS");
+		//hLabel * sliderLabelInfo2 = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2, "PRESS F TO FULLSCREEN N TO NORMAL");
+		
+		//camera zoom
+		
+		hSlider* sliderZoom1 = gui->addSlider("slider1", mainPanel, HGUI_NEXT_ROW, gui->margin2, gui->margin2, 100);
+		hLabel * zoomLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "ZOOM");
+		sliderZoom1->setFloatVar(&eyeCamZoom);
+		sliderZoom1->setRange(-500, 800);
+		
+		//shader multiply
+		
+		hSlider* sliderMultiplier1 = gui->addSlider("slider2", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
+		hLabel * multiplierLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX MULTIPLIER");
+		sliderMultiplier1->setRange(-500, 500);
+		sliderMultiplier1->setFloatVar(&shaderMultiply);
+		
+		//vertex displace effects 1-4
+		
+		hSlider* sliderVertex1 = gui->addSlider("sliderVertex1", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
+		hLabel * vertexLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX TRANSLATE 1");
+		sliderVertex1->setFloatVar(&effectsTranslate1);
+		
+		hSlider* sliderVertex2 = gui->addSlider("sliderVertex2", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
+		hLabel * vertexLabel2 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX TRANSLATE 2");
+		sliderVertex2->setFloatVar(&effectsTranslate2);
 
-	hSlider* sliderVertex3 = gui->addSlider("sliderVertex3", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
-	hLabel * vertexLabel3 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX TRANSLATE 3");
-	sliderVertex3->setFloatVar(&effectsTranslate3);
+		hSlider* sliderVertex3 = gui->addSlider("sliderVertex3", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
+		hLabel * vertexLabel3 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX TRANSLATE 3");
+		sliderVertex3->setFloatVar(&effectsTranslate3);
 
-	hSlider* sliderVertex4 = gui->addSlider("sliderVertex4", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
-	hLabel * vertexLabel4 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX TRANSLATE 4");
-	sliderVertex4->setFloatVar(&effectsTranslate4);
+		hSlider* sliderVertex4 = gui->addSlider("sliderVertex4", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0, 100);
+		hLabel * vertexLabel4 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "VERTEX TRANSLATE 4");
+		sliderVertex4->setFloatVar(&effectsTranslate4);
 
-	//effects checkbox
+		//VIDEO / VISUAL effects checkbox
+		
+		hLabel * effectsLabelInfo = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2, "EFFECTS TOGGLE");
+
+		hCheckBox * checkEffects1 = gui->addCheckBox("effects1", mainPanel, HGUI_NEXT_ROW, gui->margin2, gui->margin2);
+		hLabel * effectsLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 1");
+		checkEffects1->setBoolVar(&enableEffects1);
+		
+		hCheckBox * checkEffects2 = gui->addCheckBox("effects2", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0);
+		hLabel * effectsLabel2 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 2");
+		checkEffects2->setBoolVar(&enableEffects2);
+
+		hCheckBox * checkEffects3 = gui->addCheckBox("effects3", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0);
+		hLabel * effectsLabel3 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 3");
+		checkEffects3->setBoolVar(&enableEffects3);
+
+		hCheckBox * checkEffects4 = gui->addCheckBox("effects4", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0);
+		hLabel * effectsLabel4 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 4");
+		checkEffects4->setBoolVar(&enableEffects4);
 	
-	hCheckBox * checkEffects1 = gui->addCheckBox("effects1", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0);
-	hLabel * effectsLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 1");
-	checkEffects1->setBoolVar(&enableEffects1);
-	//checkEffects1->setBackgroundColor(0x000000);
-	
-	hCheckBox * checkEffects2 = gui->addCheckBox("effects2", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0);
-	hLabel * effectsLabel2 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 2");
-	checkEffects2->setBoolVar(&enableEffects2);
-	//checkEffects2->setBackgroundColor(0x000000);
+		//adapt panel depend on content
+		mainPanel->adaptPanelSize(gui->margin2, gui->margin2);
 
-	hCheckBox * checkEffects3 = gui->addCheckBox("effects3", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0);
-	hLabel * effectsLabel3 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 3");
-	checkEffects3->setBoolVar(&enableEffects3);
-	//checkEffects3->setBackgroundColor(0x000000);
-
-	hCheckBox * checkEffects4 = gui->addCheckBox("effects4", mainPanel, HGUI_NEXT_ROW, gui->margin2, 0);
-	hLabel * effectsLabel4 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 4");
-	checkEffects4->setBoolVar(&enableEffects4);
-	//checkEffects4->setBackgroundColor(0x000000);
-	//checkEffects4->setColor(0xFFFFFF);
+	//BEGIN GUI FOR AUDIO EFFECTS // mainPanel1
 	
-	//adapt panel depend on content
-	
-	mainPanel->adaptPanelSize(gui->margin2, gui->margin2);
+		hLabel * sliderLabelAudioInfo1 = gui->addLabel("", mainPanel1, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2+gui->margin2, "GPUFUXETTRA AUDIO EFFECTS");
 
+		hSlider* sliderAudio1 = gui->addSlider("audio1", mainPanel1, HGUI_NEXT_ROW, gui->margin2, gui->margin2, 100);
+		hLabel * audioLabel1 = gui->addLabel("", mainPanel1, HGUI_RIGHT,  gui->margin2,  0, "Audio 1");
+
+		hSlider* sliderAudio2 = gui->addSlider("audio2", mainPanel1, HGUI_NEXT_ROW, gui->margin2, 0, 100);
+		hLabel * audioLabel2 = gui->addLabel("", mainPanel1, HGUI_RIGHT,  gui->margin2,  0, "Audio 2");
+	
+		hSlider* sliderAudio3 = gui->addSlider("audio3", mainPanel1, HGUI_NEXT_ROW, gui->margin2, 0, 100);
+		hLabel * audioLabel3 = gui->addLabel("", mainPanel1, HGUI_RIGHT,  gui->margin2,  0, "Audio 3");
+	
+		mainPanel1->adaptPanelSize(gui->margin2, gui->margin2);
+	
+	//GUI TAB MENU
+	
+		int mainTabBoxWidth = mainPanel->getWidth();
+		
+		// hTabBox *  hGui::addTabBox(std::string name, hPanel * parent, int dispMode, int x, int y, int width)
+		hTabBox *  mainTabBox = gui->addTabBox("mainTabBox", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3, mainTabBoxWidth);
+		// NULL: the main tabBox has no parent panel
+		// HGUI_ABSOLUTE_POSITION : the only possibility for the main tabBox
+		// -1: no need to show the upper line
+	
+		//mainTabBox->setBackgroundColor(0xFFFFFF);
+	
+		mainTabBox->addItems(2); // Add the needed number of items (tabs) to the tabBox
+		// (item numbers start always with #1)
+		
+		// Set the name of the different tabs
+		mainTabBox->setItemLabel(1, "VIDEO EFFECTS");
+		mainTabBox->setItemLabel(2, "AUDIO EFFECTS");
+		
+		mainTabBox->setItemPanel(1, mainPanel); // Let our main panel to be the fist tab
+		mainTabBox->setItemPanel(2, mainPanel1); // Let our main panel to be the fist tab
+		
+		mainTabBox->selectItem(1);				// and select it
+	
+	
+	gui->setRootWidget(mainTabBox); // Let the gui engine know that now its mainTabBox our root widget
+	
+	
 	
 	hEvents * events = hEvents::getInstance();
 	events->setup();
@@ -171,13 +253,18 @@ void testApp::setup(){
 	//CGPostMouseEvent(point, FALSE, 1, TRUE);   //mouse down
 	//CGPostMouseEvent(point, FALSE, 1, FALSE);//mouse up
 	
+
+	
+	
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+	
+	//update webcam picture
 	eyeCam.grabFrame();
 	
+	//zooming function from gui
 	if (eyeCamZoom != eyeCamZoomPrev) {
 		windowCamera.setDistance(eyeCamZoom);
 		eyeCamZoomPrev = eyeCamZoom;
