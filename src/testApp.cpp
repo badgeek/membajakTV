@@ -86,7 +86,7 @@ void testApp::setup(){
 		gui->setTabBoxSelColor(0xCCCCCC);	
 		
 		gui->setBackgroundColor	(0x333333);
-		gui->setBorderColor		(0xCCCCCC);
+		gui->setBorderColor		(0x000000);
 		gui->setFillColor		(0x555555);
 		gui->setAltFillColor	(0x557766);
 		gui->setButtonShadowColor(0x999999);
@@ -119,11 +119,11 @@ void testApp::setup(){
 	
 	//INITIATE MAIN PANEL
 	
-		hPanel * mainPanel = gui->addPanel("mainPanel", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3+gui->margin1, 250, 0, true);
+		hPanel * mainPanel = gui->addPanel("mainPanel", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3+gui->margin1, 250, 0, false);
 		mainPanel->setVisibleBackground(false);
 		mainPanel->setBackgroundColor(0x000000);
 
-		hPanel * mainPanel1 = gui->addPanel("mainPanel1", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3+gui->margin1, 250, 0, true);
+		hPanel * mainPanel1 = gui->addPanel("mainPanel1", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3+gui->margin1, 250, 0, false);
 		mainPanel1->setVisibleBackground(false);
 		mainPanel1->setBackgroundColor(0x000000);
 	
@@ -215,6 +215,7 @@ void testApp::setup(){
 		
 		// hTabBox *  hGui::addTabBox(std::string name, hPanel * parent, int dispMode, int x, int y, int width)
 		hTabBox *  mainTabBox = gui->addTabBox("mainTabBox", NULL, HGUI_ABSOLUTE_POSITION, gui->margin1, gui->margin1+gui->margin3, mainTabBoxWidth);
+	
 		// NULL: the main tabBox has no parent panel
 		// HGUI_ABSOLUTE_POSITION : the only possibility for the main tabBox
 		// -1: no need to show the upper line
