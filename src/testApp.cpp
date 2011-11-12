@@ -136,7 +136,7 @@ void testApp::setup(){
 	
 	//BEGIN GUI FOR MAIN PANEL / VIDEO EFFECTS
 	
-		hLabel * sliderLabelInfo1 = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2+gui->margin2, "GPUFUXETTRA VIDEO EFFECTS");
+		hLabel * sliderLabelInfo1 = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2+gui->margin2, "/// GPUFUXETTRA VIDEO EFFECTS");
 		//hLabel * sliderLabelInfo2 = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2, "PRESS F TO FULLSCREEN N TO NORMAL");
 		
 		//camera zoom
@@ -173,7 +173,7 @@ void testApp::setup(){
 
 		//VIDEO / VISUAL effects checkbox
 		
-		hLabel * effectsLabelInfo = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2, "EFFECTS TOGGLE");
+		hLabel * effectsLabelInfo = gui->addLabel("", mainPanel, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2, "/// EFFECTS TOGGLE");
 
 		hCheckBox * checkEffects1 = gui->addCheckBox("effects1", mainPanel, HGUI_NEXT_ROW, gui->margin2, gui->margin2);
 		hLabel * effectsLabel1 = gui->addLabel("", mainPanel, HGUI_RIGHT,  gui->margin2,  0, "EFFECTS 1");
@@ -196,7 +196,7 @@ void testApp::setup(){
 
 	//BEGIN GUI FOR AUDIO EFFECTS // mainPanel1
 	
-		hLabel * sliderLabelAudioInfo1 = gui->addLabel("", mainPanel1, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2+gui->margin2, "GPUFUXETTRA AUDIO EFFECTS");
+		hLabel * sliderLabelAudioInfo1 = gui->addLabel("", mainPanel1, HGUI_NEXT_ROW,  gui->margin2,  gui->margin2+gui->margin2+gui->margin2, "/// GPUFUXETTRA AUDIO EFFECTS");
 
 		hSlider* sliderAudio1 = gui->addSlider("audio1", mainPanel1, HGUI_NEXT_ROW, gui->margin2, gui->margin2, 100);
 		hLabel * audioLabel1 = gui->addLabel("", mainPanel1, HGUI_RIGHT,  gui->margin2,  0, "Audio 1");
@@ -226,8 +226,8 @@ void testApp::setup(){
 		// (item numbers start always with #1)
 		
 		// Set the name of the different tabs
-		mainTabBox->setItemLabel(1, "VIDEO EFFECTS");
-		mainTabBox->setItemLabel(2, "AUDIO EFFECTS");
+		mainTabBox->setItemLabel(1, "+ VIDEO EFFECTS");
+		mainTabBox->setItemLabel(2, "+ AUDIO EFFECTS");
 		
 		mainTabBox->setItemPanel(1, mainPanel); // Let our main panel to be the fist tab
 		mainTabBox->setItemPanel(2, mainPanel1); // Let our main panel to be the fist tab
