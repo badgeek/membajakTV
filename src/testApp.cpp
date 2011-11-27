@@ -521,6 +521,7 @@ void testApp::setupArduino(const int & version) {
 	ard.sendDigitalPinMode(3, ARD_INPUT);
 	ard.sendDigitalPinMode(4, ARD_INPUT);
 	ard.sendDigitalPinMode(5, ARD_INPUT);
+	ard.sendDigitalPinMode(6, ARD_INPUT);
 	
 	
 	bArduinoSetup = true;

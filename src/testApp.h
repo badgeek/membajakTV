@@ -3,6 +3,7 @@
 #include <Carbon/Carbon.h>  
 #include "ofMain.h"
 #include "eyeMesh.h"
+#include "pdSound.h"
 #include "hGui_all.h"
 
 
@@ -24,7 +25,11 @@ class testApp : public ofBaseApp, public hObject {
 		void gotMessage(ofMessage msg);
 		void exit();
 		void setupArduino(const int & version);
-	
+		
+		//audio callback
+		void audioReceived(float * input, int bufferSize, int nChannels);
+		void audioRequested(float * output, int bufferSize, int nChannels);
+
 		OSStatus SendAppleEventToSystemProcess(AEEventID EventToSend);  
 	
 		ofEasyCam		windowCamera;
@@ -70,5 +75,9 @@ class testApp : public ofBaseApp, public hObject {
 		int mouseY;
 		
 		eyeMesh gridCam;
+	
+		//sound
+	
+		pdSound pdEngine;
 	
 };
