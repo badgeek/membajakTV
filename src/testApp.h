@@ -23,7 +23,7 @@ class testApp : public ofBaseApp, public hObject {
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		void exit();
-
+		void setupArduino(const int & version);
 	
 		OSStatus SendAppleEventToSystemProcess(AEEventID EventToSend);  
 	
@@ -32,9 +32,15 @@ class testApp : public ofBaseApp, public hObject {
 		ofVideoGrabber	eyeCam;
 		ofShader		fuxShader;
 		ofFbo			eyeCamFBO;
+		ofArduino		ard;
+	
+		bool bArduinoSetup;
 	
 		bool enableAlpha;
 		bool enableGui;
+	
+		//shutdown
+		bool btnShutdown;
 	
 		//effects switch
 		bool enableEffects1;

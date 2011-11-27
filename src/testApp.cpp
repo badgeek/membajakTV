@@ -256,13 +256,36 @@ void testApp::setup(){
 	
 
 	
+	ard.connect("/dev/tty.usbmodemfa131", 57600);
+	ofAddListener(ard.EInitialized, this, &testApp::setupArduino);
+	bArduinoSetup = false;
 	
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
 	
+	ard.update();
 	//update webcam picture
+	
+	effectsTranslate1 = ofMap(ard.getAnalog(0), 0, 1023, -200, 200, false);
+	effectsTranslate2 = ofMap(ard.getAnalog(1), 0, 1023, -200, 200, false);
+	effectsTranslate3 = ofMap(ard.getAnalog(2), 0, 1023, -200, 200, false);
+	effectsTranslate4 = ofMap(ard.getAnalog(3), 0, 1023, -200, 200, false);
+	
+	eyeCamZoom		  = ofMap(ard.getAnalog(4), 0, 1023, -500, 800, false);
+	shaderMultiply    = ofMap(ard.getAnalog(5), 0, 1023, -500, 800, false);
+	
+	if (ard.getDigital(2) == 1){ enableEffects1 = true; }else{ enableEffects1 = false;};
+	if (ard.getDigital(3) == 1){ enableEffects2 = true; }else{ enableEffects2 = false;};
+	if (ard.getDigital(4) == 1){ enableEffects3 = true; }else{ enableEffects3 = false;};
+	if (ard.getDigital(5) == 1){ enableEffects4 = true; }else{ enableEffects4 = false;};
+	
+	if	(ard.getDigital(6) == 1)
+	{
+		OSErr error = SendAppleEventToSystemProcess(kAEShutDown);  
+	}
+	
 	eyeCam.grabFrame();
 	
 	//zooming function from gui
@@ -278,7 +301,6 @@ void testApp::update(){
 void testApp::draw(){
 	
 
-	
 			windowCamera.begin();
 		
 			glPushMatrix();
@@ -488,3 +510,20 @@ OSStatus testApp::SendAppleEventToSystemProcess(AEEventID EventToSend)
 	
     return(error); //if this is noErr then we are successful  
 }  
+
+
+
+void testApp::setupArduino(const int & version) {
+	ofRemoveListener(ard.EInitialized, this, &testApp::setupArduino);
+	ard.sendAnalogPinReporting(0, ARD_ANALOG);
+	ard.sendAnalogPinReporting(1, ARD_ANALOG);
+	
+	ard.sendDigitalPinMode(2, ARD_INPUT);
+	ard.sendDigitalPinMode(3, ARD_INPUT);
+	ard.sendDigitalPinMode(4, ARD_INPUT);
+	ard.sendDigitalPinMode(5, ARD_INPUT);
+	
+	
+	bArduinoSetup = true;
+}
+
