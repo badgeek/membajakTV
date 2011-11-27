@@ -1,5 +1,7 @@
 #pragma once
 
+#define	DONT_USE_ARDUINO
+
 #include <Carbon/Carbon.h>  
 #include "ofMain.h"
 #include "eyeMesh.h"
@@ -24,8 +26,11 @@ class testApp : public ofBaseApp, public hObject {
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		void exit();
-		void setupArduino(const int & version);
 		
+		#ifndef DONT_USE_ARDUINO
+		void setupArduino(const int & version);
+		#endif
+	
 		//audio callback
 		void audioReceived(float * input, int bufferSize, int nChannels);
 		void audioRequested(float * output, int bufferSize, int nChannels);
@@ -37,8 +42,11 @@ class testApp : public ofBaseApp, public hObject {
 		ofVideoGrabber	eyeCam;
 		ofShader		fuxShader;
 		ofFbo			eyeCamFBO;
-		ofArduino		ard;
 	
+		#ifndef DONT_USE_ARDUINO
+		ofArduino		ard;
+		#endif
+		
 		bool bArduinoSetup;
 	
 		bool enableAlpha;

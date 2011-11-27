@@ -254,9 +254,15 @@ void testApp::setup(){
 	//CGPostMouseEvent(point, FALSE, 1, TRUE);   //mouse down
 	//CGPostMouseEvent(point, FALSE, 1, FALSE);//mouse up
 	
+	#ifndef DONT_USE_ARDUINO
+	cout << "rgbvertexnoize 0.1 - connecting to arduino";
 	ard.connect("/dev/tty.usbmodemfa131", 57600);
 	ofAddListener(ard.EInitialized, this, &testApp::setupArduino);
 	bArduinoSetup = false;
+	#else
+	cout << "rgbvertexnoize 0.1 - running without arduino";
+	#endif
+	
 	btnShutdown   = false;
 	
 	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
@@ -268,8 +274,8 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
 	
+	#ifndef DONT_USE_ARDUINO
 	ard.update();
-	//update webcam picture
 	
 	effectsTranslate1 = ofMap(ard.getAnalog(0), 0, 1023, -200, 200, false);
 	effectsTranslate2 = ofMap(ard.getAnalog(1), 0, 1023, -200, 200, false);
@@ -289,6 +295,11 @@ void testApp::update(){
 		OSErr error = SendAppleEventToSystemProcess(kAEShutDown);  
 	}
 	
+	
+	#endif
+	
+	//update webcam picture
+
 	eyeCam.grabFrame();
 	
 	//zooming function from gui
@@ -526,8 +537,10 @@ OSStatus testApp::SendAppleEventToSystemProcess(AEEventID EventToSend)
 }  
 
 
+#ifndef DONT_USE_ARDUINO
 
 void testApp::setupArduino(const int & version) {
+	
 	ofRemoveListener(ard.EInitialized, this, &testApp::setupArduino);
 	ard.sendAnalogPinReporting(0, ARD_ANALOG);
 	ard.sendAnalogPinReporting(1, ARD_ANALOG);
@@ -538,7 +551,7 @@ void testApp::setupArduino(const int & version) {
 	ard.sendDigitalPinMode(5, ARD_INPUT);
 	ard.sendDigitalPinMode(6, ARD_INPUT);
 	
-	
 	bArduinoSetup = true;
 }
 
+#endif
