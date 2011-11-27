@@ -254,11 +254,10 @@ void testApp::setup(){
 	//CGPostMouseEvent(point, FALSE, 1, TRUE);   //mouse down
 	//CGPostMouseEvent(point, FALSE, 1, FALSE);//mouse up
 	
-
-	
 	ard.connect("/dev/tty.usbmodemfa131", 57600);
 	ofAddListener(ard.EInitialized, this, &testApp::setupArduino);
 	bArduinoSetup = false;
+	//btnShutdown   = false;
 	
 }
 
