@@ -257,7 +257,11 @@ void testApp::setup(){
 	ard.connect("/dev/tty.usbmodemfa131", 57600);
 	ofAddListener(ard.EInitialized, this, &testApp::setupArduino);
 	bArduinoSetup = false;
-	//btnShutdown   = false;
+	btnShutdown   = false;
+	
+	int ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
+	ofSoundStreamSetup(2, 2, this, 44100, ofxPd::getBlockSize()*ticksPerBuffer, 4);
+	pdEngine.setup(2, 2, 44100, ticksPerBuffer);
 	
 }
 
@@ -457,6 +461,17 @@ void testApp::gotMessage(ofMessage msg){
 void testApp::dragEvent(ofDragInfo dragInfo){ 
 
 }
+
+
+void testApp::audioReceived(float * input, int bufferSize, int nChannels) {
+	pdEngine.audioReceived(input, bufferSize, nChannels);
+}
+
+//--------------------------------------------------------------
+void testApp::audioRequested(float * output, int bufferSize, int nChannels) {
+	pdEngine.audioRequested(output, bufferSize, nChannels);
+}
+
 
 void testApp::exit()
 {
