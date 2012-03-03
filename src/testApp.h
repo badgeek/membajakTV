@@ -1,11 +1,11 @@
 #pragma once
 
-#define	DONT_USE_ARDUINO
 
 #include <Carbon/Carbon.h>  
 #include "ofMain.h"
 #include "eyeMesh.h"
 #include "pdSound.h"
+#include "ofxXmlSettings.h"
 #include "hGui_all.h"
 
 
@@ -42,6 +42,7 @@ class testApp : public ofBaseApp, public hObject {
 		ofVideoGrabber	eyeCam;
 		ofShader		fuxShader;
 		ofFbo			eyeCamFBO;
+		ofxXmlSettings  xmlVertexSettings;
 	
 		#ifndef DONT_USE_ARDUINO
 		ofArduino		ard;
@@ -60,6 +61,12 @@ class testApp : public ofBaseApp, public hObject {
 		bool enableEffects2;
 		bool enableEffects3;
 		bool enableEffects4;
+	
+		bool prevEnableEffects1;
+		bool prevEnableEffects2;
+		bool prevEnableEffects3;
+		bool prevEnableEffects4;
+	
 
 		//effects translate
 		float effectsTranslate1;

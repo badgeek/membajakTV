@@ -255,8 +255,9 @@ void testApp::setup(){
 	//CGPostMouseEvent(point, FALSE, 1, FALSE);//mouse up
 	
 	#ifndef DONT_USE_ARDUINO
-	cout << "rgbvertexnoize 0.1 - connecting to arduino";
-	ard.connect("/dev/tty.usbmodemfa131", 57600);
+	cout << "rgbvertexnoize 0.1 - load settings then connecting to arduino";
+	xmlVertexSettings.loadFile("arduino.xml");
+	ard.connect(xmlVertexSettings.getValue("arduino_settings:device:", "/dev/tty.usbmodemfa131"), 57600);
 	ofAddListener(ard.EInitialized, this, &testApp::setupArduino);
 	bArduinoSetup = false;
 	#else
@@ -295,8 +296,26 @@ void testApp::update(){
 		OSErr error = SendAppleEventToSystemProcess(kAEShutDown);  
 	}
 	
-	
 	#endif
+	
+	//sound fx
+	
+	if (enableEffects1) {
+		pdEngine.pd.sendFloat("vertexfx1", effectsTranslate1);	
+	}
+	
+	if (enableEffects2) {
+		pdEngine.pd.sendFloat("vertexfx2", effectsTranslate2);	
+	}
+	
+	if (enableEffects3) {
+		pdEngine.pd.sendFloat("vertexfx3", effectsTranslate3);	
+	}
+	
+	if (enableEffects4) {
+		pdEngine.pd.sendFloat("vertexfx4", effectsTranslate4);	
+	}
+	
 	
 	//update webcam picture
 
